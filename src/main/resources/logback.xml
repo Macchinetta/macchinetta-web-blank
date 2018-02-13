@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
 <configuration>
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
@@ -60,11 +61,6 @@
         <level value="info" />
     </logger>
 
-    <!--  REMOVE THIS LINE IF YOU USE JPA
-    <logger name="org.hibernate.engine.transaction">
-        <level value="debug" />
-    </logger>
-          REMOVE THIS LINE IF YOU USE JPA  -->
     <!--  REMOVE THIS LINE IF YOU USE MyBatis3
     <logger name="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <level value="debug" />

@@ -4,18 +4,18 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.macchinetta.blank</groupId>
     <artifactId>macchinetta-web-blank-noorm</artifactId>
-    <version>1.4.0.RELEASE</version>
+    <version>1.5.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <parent>
         <groupId>org.terasoluna.gfw</groupId>
         <artifactId>terasoluna-gfw-parent</artifactId>
-        <version>5.3.0.RELEASE</version>
+        <version>5.4.0-SNAPSHOT</version>
         <relativePath />
     </parent>
 
-    <name>Macchinetta Server Framework (1.x) Web Blank Project</name>
-    <description>Web Blank Project using Macchinetta Server Framework (1.x)</description>
-    <url>http://macchietta.github.io</url>
+    <name>Macchinetta Server Framework (1.x) Web Blank Project (No O/R Mapper)</name>
+    <description>Web Blank Project (No O/R Mapper) using Macchinetta Server Framework (1.x)</description>
+    <url>http://macchinetta.github.io</url>
     <inceptionYear>2017</inceptionYear>
     <licenses>
         <license>
@@ -38,7 +38,7 @@
     <scm>
         <connection>scm:git:git@github.com:Macchinetta/macchinetta-web-blank.git</connection>
         <developerConnection>scm:git:git@github.com:Macchinetta/macchinetta-web-blank</developerConnection>
-        <url>git@github.com:Macchietta/macchinetta-web-blank</url>
+        <url>git@github.com:Macchinetta/macchinetta-web-blank</url>
     </scm>
     <repositories>
         <repository>
@@ -188,7 +188,7 @@
 <!--            <scope>runtime</scope> -->
 <!--        </dependency> -->
 <!--        <dependency> -->
-<!--            <groupId>com.oracle</groupId> -->
+<!--            <groupId>com.oracle.jdbc</groupId> -->
 <!--            <artifactId>ojdbc7</artifactId> -->
 <!--            <version>${ojdbc.version}</version> -->
 <!--            <scope>runtime</scope> -->
@@ -221,52 +221,25 @@
             <artifactId>tomcat-embed-el</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--  REMOVE THIS LINE IF YOU USE Spring Test DBUnit
+        <dependency>
+            <groupId>org.dbunit</groupId>
+            <artifactId>dbunit</artifactId>
+            <version>${dbunit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.springtestdbunit</groupId>
+            <artifactId>spring-test-dbunit</artifactId>
+            <version>${spring.test.dbunit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        -->
+
+        <!-- Please set the appropriate version according to the web browser. -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>${selenium.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-chrome-driver</artifactId>
-            <version>${selenium.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-remote-driver</artifactId>
-            <version>${selenium.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-api</artifactId>
-            <version>${selenium.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-firefox-driver</artifactId>
-            <version>${selenium.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-ie-driver</artifactId>
-            <version>${selenium.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-safari-driver</artifactId>
-            <version>${selenium.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-support</artifactId>
-            <version>${selenium.version}</version>
             <scope>test</scope>
         </dependency>
         <!-- == End Unit Test == -->
@@ -290,7 +263,8 @@
         <!-- == Dependency Versions == -->
         <postgresql.version>9.4.1212</postgresql.version>
         <ojdbc.version>12.1.0.2</ojdbc.version>
-        <selenium.version>2.46.0</selenium.version>
+        <dbunit.version>2.5.4</dbunit.version>
+        <spring.test.dbunit.version>1.3.0</spring.test.dbunit.version>
         <!-- == Project Properties == -->
         <java-version>1.8</java-version>
     </properties>
