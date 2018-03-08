@@ -33,12 +33,6 @@
         <jdbc:script location="classpath:/database/${database}-dataload.sql" encoding="UTF-8" />
     </jdbc:initialize-database>
 
-    <!--  REMOVE THIS LINE IF YOU USE JPA
-    <bean id="transactionManager"
-        class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="entityManagerFactory" />
-    </bean>
-          REMOVE THIS LINE IF YOU USE JPA  -->
     <!--  REMOVE THIS LINE IF YOU USE MyBatis3
     <bean id="transactionManager"
         class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

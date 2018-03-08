@@ -30,8 +30,7 @@ Create a new issue from [here](https://github.com/Macchinetta/macchinetta-web-bl
  Modify to `"<artifactId>projectName</artifactId>"`
 
  ## Affects Version/s
- * 5.0.0.RELEASE
- * 1.0.2.RELEASE
+ * 1.4.2.RELEASE
 
  ## Fix Version/s
  (To be written later by project member)

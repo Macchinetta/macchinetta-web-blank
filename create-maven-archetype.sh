@@ -1,8 +1,7 @@
 #!/bin/sh
-if [ ! -e tmp ]; then
-  mkdir tmp
-  cp -r src pom.xml tmp
-fi
+rm -rf ./tmp
+mkdir tmp
+cp -r src pom.xml tmp
 pushd tmp
 
 # delete database info if Mybatis3 is not used
@@ -33,22 +32,22 @@ if [ -d src/main/resources/xxxxxx ];then
   rm -rf src/main/resources/xxxxxx
 fi
 
-sed -i -e "s/com\.github\.macchietta\.web\.blank/xxxxxx.yyyyyy.zzzzzz/g" pom.xml
-sed -i -e "s/macchinetta-web-blank-noorm/projectName/g" pom.xml
+sed -i -e "s/com\.github\.macchinetta\.blank/xxxxxx.yyyyyy.zzzzzz/g" pom.xml
+sed -i -e "s|<artifactId>macchinetta-web-blank-noorm</artifactId>|<artifactId>projectName</artifactId>|g" pom.xml
 
 rm -rf `find . -name '.svn' -type d`
 
-if [ "$1" = "central" ]; then
+if [ "$2" = "central" ]; then
   PROFILE="-P central"
 fi
 mvn archetype:create-from-project ${PROFILE}
 
 pushd target/generated-sources/archetype
 
-sed -i -e "s/xxxxxx\.yyyyyy\.zzzzzz/com.github.macchinetta.web.blank/g" pom.xml
+sed -i -e "s/xxxxxx\.yyyyyy\.zzzzzz/com.github.macchinetta.blank/g" pom.xml
 sed -i -e "s/projectName/macchinetta-web-blank-noorm/g" pom.xml
 
-if [ "$1" = "central" ]; then
+if [ "$2" = "central" ]; then
   # add plugins to deploy to Maven Central Repository
   LF=$(printf '\\\012_')
   LF=${LF%_}
@@ -85,7 +84,7 @@ if [ "$1" = "central" ]; then
   sed -i -e "s/  <\/build>/${REPLACEMENT_TAG}/" pom.xml
 fi
 
-if [ "$1" = "central" ]; then
+if [ "$1" = "deploy" ]; then
   mvn deploy
 else
   mvn install
@@ -93,5 +92,3 @@ fi
 
 popd
 popd
-
-rm -rf ./tmp
