@@ -28,7 +28,7 @@ To create a blank project
 mvn archetype:generate^
  -DarchetypeGroupId=com.github.macchinetta.blank^
  -DarchetypeArtifactId=macchinetta-web-blank-archetype^
- -DarchetypeVersion=1.8.0.RELEASE
+ -DarchetypeVersion=1.8.1.RELEASE
 ```
 
 ##### for Bash
@@ -37,5 +37,5 @@ mvn archetype:generate^
 mvn archetype:generate\
  -DarchetypeGroupId=com.github.macchinetta.blank\
  -DarchetypeArtifactId=macchinetta-web-blank-archetype\
- -DarchetypeVersion=1.8.0.RELEASE
+ -DarchetypeVersion=1.8.1.RELEASE
 ```
