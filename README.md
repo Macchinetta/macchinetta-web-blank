@@ -18,9 +18,9 @@ There are two ways to get started. Download or use maven archetype to let it dow
 Quickly create your blank project using maven archetype of Macchinetta Server Framework (1.x).
 Execute `mvn archetype:generate <options>`.
 
-#### a blank project
+#### a blank project with JSP
 
-To create a blank project
+To create a blank project with JSP
 
 ##### for CommandPrompt
 
@@ -28,7 +28,7 @@ To create a blank project
 mvn archetype:generate^
  -DarchetypeGroupId=com.github.macchinetta.blank^
  -DarchetypeArtifactId=macchinetta-web-blank-archetype^
- -DarchetypeVersion=1.8.1.SP1.RELEASE
+ -DarchetypeVersion=1.9.0.RELEASE
 ```
 
 ##### for Bash
@@ -37,5 +37,27 @@ mvn archetype:generate^
 mvn archetype:generate\
  -DarchetypeGroupId=com.github.macchinetta.blank\
  -DarchetypeArtifactId=macchinetta-web-blank-archetype\
- -DarchetypeVersion=1.8.1.SP1.RELEASE
+ -DarchetypeVersion=1.9.0.RELEASE
+```
+
+#### a blank project with Thymeleaf
+
+To create a blank project with Thymeleaf
+
+##### for CommandPrompt
+
+``` console
+mvn archetype:generate^
+ -DarchetypeGroupId=com.github.macchinetta.blank^
+ -DarchetypeArtifactId=macchinetta-web-blank-thymeleaf-archetype^
+ -DarchetypeVersion=1.9.0.RELEASE
+```
+
+##### for Bash
+
+``` console
+mvn archetype:generate\
+ -DarchetypeGroupId=com.github.macchinetta.blank\
+ -DarchetypeArtifactId=macchinetta-web-blank-thymeleaf-archetype\
+ -DarchetypeVersion=1.9.0.RELEASE
 ```
