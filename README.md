@@ -28,7 +28,7 @@ To create a blank project with JSP
 mvn archetype:generate^
  -DarchetypeGroupId=com.github.macchinetta.blank^
  -DarchetypeArtifactId=macchinetta-web-blank-archetype^
- -DarchetypeVersion=1.9.0.RELEASE
+ -DarchetypeVersion=1.9.1.RELEASE
 ```
 
 ##### for Bash
@@ -37,7 +37,7 @@ mvn archetype:generate^
 mvn archetype:generate\
  -DarchetypeGroupId=com.github.macchinetta.blank\
  -DarchetypeArtifactId=macchinetta-web-blank-archetype\
- -DarchetypeVersion=1.9.0.RELEASE
+ -DarchetypeVersion=1.9.1.RELEASE
 ```
 
 #### a blank project with Thymeleaf
@@ -50,7 +50,7 @@ To create a blank project with Thymeleaf
 mvn archetype:generate^
  -DarchetypeGroupId=com.github.macchinetta.blank^
  -DarchetypeArtifactId=macchinetta-web-blank-thymeleaf-archetype^
- -DarchetypeVersion=1.9.0.RELEASE
+ -DarchetypeVersion=1.9.1.RELEASE
 ```
 
 ##### for Bash
@@ -59,5 +59,5 @@ mvn archetype:generate^
 mvn archetype:generate\
  -DarchetypeGroupId=com.github.macchinetta.blank\
  -DarchetypeArtifactId=macchinetta-web-blank-thymeleaf-archetype\
- -DarchetypeVersion=1.9.0.RELEASE
+ -DarchetypeVersion=1.9.1.RELEASE
 ```
