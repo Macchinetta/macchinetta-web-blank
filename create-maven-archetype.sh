@@ -1,11 +1,14 @@
 #!/bin/sh
+set -e
+
 rm -rf ./tmp
 mkdir tmp
 cp -r src pom.xml tmp
 pushd tmp
 
 # delete database info if Mybatis3 is not used
-grep "<artifactId>" pom.xml | head -1 | grep -E "noorm" >/dev/null
+# adding "$$ true" prevents grep from returning an error and aborting the process if the file cannot be retrieved
+grep "<artifactId>" pom.xml | head -1 | grep -E "noorm" >/dev/null && true
 if [ $? -eq 0 ]; then
   sed -i -e '/Begin Database/,/End Database/d' pom.xml
   sed -i -e '/postgresql.version/d' pom.xml

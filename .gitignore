@@ -4,10 +4,7 @@ target
 .project
 .springBeans
 *~
-.git
 .idea
 .DS_Store
+tmp
 *.iml
-*.doc*
-*.ppt*
-*.xls*
