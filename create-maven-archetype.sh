@@ -1,26 +1,25 @@
 #!/bin/sh
+set -e
+
 CONFIG=$1
 VIEW=$2
 ORM=$3
 DEPRLOY=$4
 REPOSITORY=$5
 
-if [ $VIEW == "JSP" ]; then
-  ARTIFACT_ID_VIEW=""
-else
-  ARTIFACT_ID_VIEW=-${VIEW,,}
-fi
 if [ $ORM != "NoORM" ]; then
-  ARTIFACT_ID_ORM=""
+  if [ "$CONFIG" = "JavaConfig" ]; then
+    ARTIFACT_ID=macchinetta-web-blank-${VIEW,,}-${ORM,,}
+  else
+    ARTIFACT_ID=macchinetta-web-blank-${CONFIG,,}-${VIEW,,}-${ORM,,}
+  fi
 else
-  ARTIFACT_ID_ORM=-${ORM,,}
+  if [ "$CONFIG" = "JavaConfig" ]; then
+    ARTIFACT_ID=macchinetta-web-blank-${VIEW,,}
+  else
+    ARTIFACT_ID=macchinetta-web-blank-${CONFIG,,}-${VIEW,,}
+  fi
 fi
-if [ $CONFIG == "XMLConfig" ]; then
-  ARTIFACT_ID_CONFIG=""
-else
-  ARTIFACT_ID_CONFIG=-${CONFIG,,}
-fi
-ARTIFACT_ID=macchinetta-web-blank${ARTIFACT_ID_CONFIG}${ARTIFACT_ID_ORM}${ARTIFACT_ID_VIEW}
 echo create $ARTIFACT_ID
 
 # start create tmp directory ###################
@@ -67,7 +66,7 @@ if [ "$CONFIG" = "XMLConfig" ]; then
   mv src/main/resources/META-INF/spring/projectName-domain.xml src/main/resources/META-INF/spring/__artifactId__-domain.xml
   mv src/main/resources/META-INF/spring/projectName-infra.xml src/main/resources/META-INF/spring/__artifactId__-infra.xml
   mv src/main/resources/META-INF/spring/projectName-codelist.xml src/main/resources/META-INF/spring/__artifactId__-codelist.xml
-  # if JPA or Mybatis3 is used
+  # if Mybatis3 is used
   if [ -e src/main/resources/META-INF/spring/projectName-env.xml ];then
     mv src/main/resources/META-INF/spring/projectName-env.xml src/main/resources/META-INF/spring/__artifactId__-env.xml
   fi
@@ -75,7 +74,7 @@ else
   mv src/main/java/xxxxxx/yyyyyy/zzzzzz/config/app/ProjectNameCodeListConfig.java src/main/java/xxxxxx/yyyyyy/zzzzzz/config/app/__ProjectName__CodeListConfig.java
   mv src/main/java/xxxxxx/yyyyyy/zzzzzz/config/app/ProjectNameDomainConfig.java src/main/java/xxxxxx/yyyyyy/zzzzzz/config/app/__ProjectName__DomainConfig.java
   mv src/main/java/xxxxxx/yyyyyy/zzzzzz/config/app/ProjectNameInfraConfig.java src/main/java/xxxxxx/yyyyyy/zzzzzz/config/app/__ProjectName__InfraConfig.java
-  # if JPA or Mybatis3 is used
+  # if Mybatis3 is used
   if [ -e src/main/java/xxxxxx/yyyyyy/zzzzzz/config/app/ProjectNameEnvConfig.java ];then
     mv src/main/java/xxxxxx/yyyyyy/zzzzzz/config/app/ProjectNameEnvConfig.java src/main/java/xxxxxx/yyyyyy/zzzzzz/config/app/__ProjectName__EnvConfig.java
   fi
@@ -92,8 +91,12 @@ if [ -d src/main/resources/xxxxxx ];then
   rm -rf src/main/resources/xxxxxx
 fi
 
-sed -i -e "/REMOVE THIS LINE IF YOU USE $ORM/d" `grep -rIl $ORM src pom.xml`
-sed -i -e "s/REMOVE THIS COMMENT IF YOU USE $ORM//g" `grep -rIl $ORM src pom.xml`
+if [ $ORM != "NoORM" ]; then
+  GREP_TARGET=`grep -rIl $ORM src pom.xml`
+
+  sed -i -e "/REMOVE THIS LINE IF YOU USE $ORM/d" $GREP_TARGET
+  sed -i -e "s/REMOVE THIS COMMENT IF YOU USE $ORM//g" $GREP_TARGET
+fi
 
 if [ "$REPOSITORY" = "central" ]; then
   PROFILE="-P central"

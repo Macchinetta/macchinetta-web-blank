@@ -18,17 +18,17 @@ There are two ways to get started. Download or use maven archetype to let it dow
 Quickly create your blank project using maven archetype of Macchinetta Server Framework (1.x).
 Execute `mvn archetype:generate <options>`.
 
-#### a blank project with JSP
+#### a blank project(JavaConfig,JSP) without any DB configuration
 
-To create a blank project with JSP
+To create a plain blank project
 
 ##### for CommandPrompt
 
 ``` console
 mvn archetype:generate^
  -DarchetypeGroupId=com.github.macchinetta.blank^
- -DarchetypeArtifactId=macchinetta-web-blank-archetype^
- -DarchetypeVersion=1.9.1.RELEASE
+ -DarchetypeArtifactId=macchinetta-web-blank-jsp-archetype^
+ -DarchetypeVersion=1.10.0.RELEASE
 ```
 
 ##### for Bash
@@ -36,13 +36,35 @@ mvn archetype:generate^
 ``` console
 mvn archetype:generate\
  -DarchetypeGroupId=com.github.macchinetta.blank\
- -DarchetypeArtifactId=macchinetta-web-blank-archetype\
- -DarchetypeVersion=1.9.1.RELEASE
+ -DarchetypeArtifactId=macchinetta-web-blank-jsp-archetype\
+ -DarchetypeVersion=1.10.0.RELEASE
 ```
 
-#### a blank project with Thymeleaf
+#### a blank project(XMLConfig,JSP) without any DB configuration
 
-To create a blank project with Thymeleaf
+To create a plain blank project(XMLConfig,JSP)
+
+##### for CommandPrompt
+
+``` console
+mvn archetype:generate^
+ -DarchetypeGroupId=com.github.macchinetta.blank^
+ -DarchetypeArtifactId=macchinetta-web-blank-xmlconfig-jsp-archetype^
+ -DarchetypeVersion=1.10.0.RELEASE
+```
+
+##### for Bash
+
+``` console
+mvn archetype:generate\
+ -DarchetypeGroupId=com.github.macchinetta.blank\
+ -DarchetypeArtifactId=macchinetta-web-blank-xmlconfig-jsp-archetype\
+ -DarchetypeVersion=1.10.0.RELEASE
+```
+
+#### a blank project(JavaConfig,Thymeleaf) without any DB configuration
+
+To create a plain blank project(JavaConfig,Thymeleaf)
 
 ##### for CommandPrompt
 
@@ -50,7 +72,7 @@ To create a blank project with Thymeleaf
 mvn archetype:generate^
  -DarchetypeGroupId=com.github.macchinetta.blank^
  -DarchetypeArtifactId=macchinetta-web-blank-thymeleaf-archetype^
- -DarchetypeVersion=1.9.1.RELEASE
+ -DarchetypeVersion=1.10.0.RELEASE
 ```
 
 ##### for Bash
@@ -59,5 +81,114 @@ mvn archetype:generate^
 mvn archetype:generate\
  -DarchetypeGroupId=com.github.macchinetta.blank\
  -DarchetypeArtifactId=macchinetta-web-blank-thymeleaf-archetype\
- -DarchetypeVersion=1.9.1.RELEASE
+ -DarchetypeVersion=1.10.0.RELEASE
 ```
+
+#### a blank project(XMLConfig,Thymeleaf) without any DB configuration
+
+To create a plain blank project(XMLConfig,Thymeleaf)
+
+##### for CommandPrompt
+
+``` console
+mvn archetype:generate^
+ -DarchetypeGroupId=com.github.macchinetta.blank^
+ -DarchetypeArtifactId=macchinetta-web-blank-xmlconfig-thymeleaf-archetype^
+ -DarchetypeVersion=1.10.0.RELEASE
+```
+
+##### for Bash
+
+``` console
+mvn archetype:generate\
+ -DarchetypeGroupId=com.github.macchinetta.blank\
+ -DarchetypeArtifactId=macchinetta-web-blank-xmlconfig-thymeleaf-archetype\
+ -DarchetypeVersion=1.10.0.RELEASE
+```
+
+#### a blank project(JavaConfig,JSP) with MyBatis3
+
+To create a blank project(JavaConfig,JSP) with MyBatis3
+
+##### for CommandPrompt
+
+``` console
+mvn archetype:generate^
+ -DarchetypeGroupId=com.github.macchinetta.blank^
+ -DarchetypeArtifactId=macchinetta-web-blank-jsp-mybatis3-archetype^
+ -DarchetypeVersion=1.10.0.RELEASE
+```
+
+##### for Bash
+
+``` console
+mvn archetype:generate\
+ -DarchetypeGroupId=com.github.macchinetta.blank\
+ -DarchetypeArtifactId=macchinetta-web-blank-jsp-mybatis3-archetype\
+ -DarchetypeVersion=1.10.0.RELEASE
+```
+
+#### a blank project(XMLConfig,JSP) with MyBatis3
+
+To create a blank project(XMLConfig,JSP) with MyBatis3
+
+##### for CommandPrompt
+
+``` console
+mvn archetype:generate^
+ -DarchetypeGroupId=com.github.macchinetta.blank^
+ -DarchetypeArtifactId=macchinetta-web-blank-xmlconfig-jsp-mybatis3-archetype^
+ -DarchetypeVersion=1.10.0.RELEASE
+```
+
+##### for Bash
+
+``` console
+mvn archetype:generate\
+ -DarchetypeGroupId=com.github.macchinetta.blank\
+ -DarchetypeArtifactId=macchinetta-web-blank-xmlconfig-jsp-mybatis3-archetype\
+ -DarchetypeVersion=1.10.0.RELEASE
+```
+
+#### a blank project(JavaConfig,Thymeleaf) with MyBatis3
+
+To create a blank project(JavaConfig,Thymeleaf) with MyBatis3
+
+##### for CommandPrompt
+
+``` console
+mvn archetype:generate^
+ -DarchetypeGroupId=com.github.macchinetta.blank^
+ -DarchetypeArtifactId=macchinetta-web-blank-thymeleaf-mybatis3-archetype^
+ -DarchetypeVersion=1.10.0.RELEASE
+```
+
+##### for Bash
+
+``` console
+mvn archetype:generate\
+ -DarchetypeGroupId=com.github.macchinetta.blank\
+ -DarchetypeArtifactId=macchinetta-web-blank-thymeleaf-mybatis3-archetype\
+ -DarchetypeVersion=1.10.0.RELEASE
+```
+
+#### a blank project(XMLConfig,Thymeleaf) with MyBatis3
+
+To create a blank project(XMLConfig,Thymeleaf) with MyBatis3
+
+##### for CommandPrompt
+
+``` console
+mvn archetype:generate^
+ -DarchetypeGroupId=com.github.macchinetta.blank^
+ -DarchetypeArtifactId=macchinetta-web-blank-xmlconfig-thymeleaf-mybatis3-archetype^
+ -DarchetypeVersion=1.10.0.RELEASE
+```
+
+##### for Bash
+
+``` console
+mvn archetype:generate\
+ -DarchetypeGroupId=com.github.macchinetta.blank\
+ -DarchetypeArtifactId=macchinetta-web-blank-xmlconfig-thymeleaf-mybatis3-archetype\
+ -DarchetypeVersion=1.10.0.RELEASE
