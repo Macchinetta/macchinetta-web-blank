@@ -1,15 +1,50 @@
 #!/bin/sh
 set -e
 
+DEPLOY=$1
+REPOSITORY=$2
+ORM=$3
+
+if [ -z ${ORM} ]; then
+  ORM="NoORM"
+fi
+
+KEYWORD="REMOVE THIS LINE IF YOU USE ${ORM}"
+TARGET="src pom.xml"
+
+# start create tmp directory
 rm -rf ./tmp
 mkdir tmp
-cp -r src pom.xml tmp
+cp -r pom.xml tmp
+cp -r src tmp
+
+# artifactId
+if [ "${ORM}" != "NoORM" ]; then
+  ARTIFACT_ID=macchinetta-web-blank
+else
+  ARTIFACT_ID=macchinetta-web-blank-${ORM,,}
+fi
+echo create ${ARTIFACT_ID}
+
+# copy infra
+if [ "${ORM}" != "NoORM" ]; then
+  cp -r infra/${ORM,,}/META-INF/* tmp/src/main/resources/META-INF
+  cp -r infra/common/database tmp/src/main/resources
+  cp -r infra/common/META-INF tmp/src/main/resources
+  cp -r infra/${ORM,,}/xxxxxx tmp/src/main/resources
+fi
+
 pushd tmp
 
-# delete database info if Mybatis3 is not used
-# adding "$$ true" prevents grep from returning an error and aborting the process if the file cannot be retrieved
-grep "<artifactId>" pom.xml | head -1 | grep -E "noorm" >/dev/null && true
-if [ $? -eq 0 ]; then
+if [ "${ORM}" != "NoORM" ]; then
+  # remove comment out
+  sed -i -e "/${KEYWORD}/d" `grep -rIl "${ORM}" ${TARGET}`
+
+  # sed pom.xml
+  sed -i -e "s/<artifactId>macchinetta-web-blank-noorm/<artifactId>${ARTIFACT_ID}/g" pom.xml
+  sed -i -e "s|Web Blank Project (No O/R Mapper)|Web Blank Project|g" pom.xml
+else
+  # delete database info if JPA or Mybatis3 is not used. (NoORM)
   sed -i -e '/Begin Database/,/End Database/d' pom.xml
   sed -i -e '/postgresql.version/d' pom.xml
   sed -i -e '/ojdbc.version/d' pom.xml
@@ -36,21 +71,20 @@ if [ -d src/main/resources/xxxxxx ];then
 fi
 
 sed -i -e "s/com\.github\.macchinetta\.blank/xxxxxx.yyyyyy.zzzzzz/g" pom.xml
-sed -i -e "s|<artifactId>macchinetta-web-blank-noorm</artifactId>|<artifactId>projectName</artifactId>|g" pom.xml
+sed -i -e "s/<artifactId>${ARTIFACT_ID}/<artifactId>projectName/g" pom.xml
 
-rm -rf `find . -name '.svn' -type d`
-
-if [ "$2" = "central" ]; then
+if [ "${REPOSITORY}" = "central" ]; then
   PROFILE="-P central"
 fi
+
 mvn archetype:create-from-project ${PROFILE}
 
 pushd target/generated-sources/archetype
 
 sed -i -e "s/xxxxxx\.yyyyyy\.zzzzzz/com.github.macchinetta.blank/g" pom.xml
-sed -i -e "s/projectName/macchinetta-web-blank-noorm/g" pom.xml
+sed -i -e "s/<artifactId>projectName/<artifactId>${ARTIFACT_ID}/g" pom.xml
 
-if [ "$2" = "central" ]; then
+if [ "${REPOSITORY}" = "central" ]; then
   # add plugins to deploy to Maven Central Repository
   LF=$(printf '\\\012_')
   LF=${LF%_}
@@ -93,7 +127,7 @@ if [ "$2" = "central" ]; then
   sed -i -e "s/  <\/build>/${REPLACEMENT_TAG}/" pom.xml
 fi
 
-if [ "$1" = "deploy" ]; then
+if [ "${DEPLOY}" = "deploy" ]; then
   mvn deploy
 else
   mvn install
