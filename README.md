@@ -28,7 +28,7 @@ To create a plain blank project
 mvn archetype:generate^
  -DarchetypeGroupId=com.github.macchinetta.blank^
  -DarchetypeArtifactId=macchinetta-web-blank-jsp-archetype^
- -DarchetypeVersion=1.10.0.RELEASE
+ -DarchetypeVersion=1.11.0.RELEASE
 ```
 
 ##### for Bash
@@ -37,7 +37,7 @@ mvn archetype:generate^
 mvn archetype:generate\
  -DarchetypeGroupId=com.github.macchinetta.blank\
  -DarchetypeArtifactId=macchinetta-web-blank-jsp-archetype\
- -DarchetypeVersion=1.10.0.RELEASE
+ -DarchetypeVersion=1.11.0.RELEASE
 ```
 
 #### a blank project(XMLConfig,JSP) without any DB configuration
@@ -50,7 +50,7 @@ To create a plain blank project(XMLConfig,JSP)
 mvn archetype:generate^
  -DarchetypeGroupId=com.github.macchinetta.blank^
  -DarchetypeArtifactId=macchinetta-web-blank-xmlconfig-jsp-archetype^
- -DarchetypeVersion=1.10.0.RELEASE
+ -DarchetypeVersion=1.11.0.RELEASE
 ```
 
 ##### for Bash
@@ -59,7 +59,7 @@ mvn archetype:generate^
 mvn archetype:generate\
  -DarchetypeGroupId=com.github.macchinetta.blank\
  -DarchetypeArtifactId=macchinetta-web-blank-xmlconfig-jsp-archetype\
- -DarchetypeVersion=1.10.0.RELEASE
+ -DarchetypeVersion=1.11.0.RELEASE
 ```
 
 #### a blank project(JavaConfig,Thymeleaf) without any DB configuration
@@ -72,7 +72,7 @@ To create a plain blank project(JavaConfig,Thymeleaf)
 mvn archetype:generate^
  -DarchetypeGroupId=com.github.macchinetta.blank^
  -DarchetypeArtifactId=macchinetta-web-blank-thymeleaf-archetype^
- -DarchetypeVersion=1.10.0.RELEASE
+ -DarchetypeVersion=1.11.0.RELEASE
 ```
 
 ##### for Bash
@@ -81,7 +81,7 @@ mvn archetype:generate^
 mvn archetype:generate\
  -DarchetypeGroupId=com.github.macchinetta.blank\
  -DarchetypeArtifactId=macchinetta-web-blank-thymeleaf-archetype\
- -DarchetypeVersion=1.10.0.RELEASE
+ -DarchetypeVersion=1.11.0.RELEASE
 ```
 
 #### a blank project(XMLConfig,Thymeleaf) without any DB configuration
@@ -94,7 +94,7 @@ To create a plain blank project(XMLConfig,Thymeleaf)
 mvn archetype:generate^
  -DarchetypeGroupId=com.github.macchinetta.blank^
  -DarchetypeArtifactId=macchinetta-web-blank-xmlconfig-thymeleaf-archetype^
- -DarchetypeVersion=1.10.0.RELEASE
+ -DarchetypeVersion=1.11.0.RELEASE
 ```
 
 ##### for Bash
@@ -103,7 +103,7 @@ mvn archetype:generate^
 mvn archetype:generate\
  -DarchetypeGroupId=com.github.macchinetta.blank\
  -DarchetypeArtifactId=macchinetta-web-blank-xmlconfig-thymeleaf-archetype\
- -DarchetypeVersion=1.10.0.RELEASE
+ -DarchetypeVersion=1.11.0.RELEASE
 ```
 
 #### a blank project(JavaConfig,JSP) with MyBatis3
@@ -116,7 +116,7 @@ To create a blank project(JavaConfig,JSP) with MyBatis3
 mvn archetype:generate^
  -DarchetypeGroupId=com.github.macchinetta.blank^
  -DarchetypeArtifactId=macchinetta-web-blank-jsp-mybatis3-archetype^
- -DarchetypeVersion=1.10.0.RELEASE
+ -DarchetypeVersion=1.11.0.RELEASE
 ```
 
 ##### for Bash
@@ -125,7 +125,7 @@ mvn archetype:generate^
 mvn archetype:generate\
  -DarchetypeGroupId=com.github.macchinetta.blank\
  -DarchetypeArtifactId=macchinetta-web-blank-jsp-mybatis3-archetype\
- -DarchetypeVersion=1.10.0.RELEASE
+ -DarchetypeVersion=1.11.0.RELEASE
 ```
 
 #### a blank project(XMLConfig,JSP) with MyBatis3
@@ -138,7 +138,7 @@ To create a blank project(XMLConfig,JSP) with MyBatis3
 mvn archetype:generate^
  -DarchetypeGroupId=com.github.macchinetta.blank^
  -DarchetypeArtifactId=macchinetta-web-blank-xmlconfig-jsp-mybatis3-archetype^
- -DarchetypeVersion=1.10.0.RELEASE
+ -DarchetypeVersion=1.11.0.RELEASE
 ```
 
 ##### for Bash
@@ -147,7 +147,7 @@ mvn archetype:generate^
 mvn archetype:generate\
  -DarchetypeGroupId=com.github.macchinetta.blank\
  -DarchetypeArtifactId=macchinetta-web-blank-xmlconfig-jsp-mybatis3-archetype\
- -DarchetypeVersion=1.10.0.RELEASE
+ -DarchetypeVersion=1.11.0.RELEASE
 ```
 
 #### a blank project(JavaConfig,Thymeleaf) with MyBatis3
@@ -160,7 +160,7 @@ To create a blank project(JavaConfig,Thymeleaf) with MyBatis3
 mvn archetype:generate^
  -DarchetypeGroupId=com.github.macchinetta.blank^
  -DarchetypeArtifactId=macchinetta-web-blank-thymeleaf-mybatis3-archetype^
- -DarchetypeVersion=1.10.0.RELEASE
+ -DarchetypeVersion=1.11.0.RELEASE
 ```
 
 ##### for Bash
@@ -169,7 +169,7 @@ mvn archetype:generate^
 mvn archetype:generate\
  -DarchetypeGroupId=com.github.macchinetta.blank\
  -DarchetypeArtifactId=macchinetta-web-blank-thymeleaf-mybatis3-archetype\
- -DarchetypeVersion=1.10.0.RELEASE
+ -DarchetypeVersion=1.11.0.RELEASE
 ```
 
 #### a blank project(XMLConfig,Thymeleaf) with MyBatis3
@@ -182,7 +182,7 @@ To create a blank project(XMLConfig,Thymeleaf) with MyBatis3
 mvn archetype:generate^
  -DarchetypeGroupId=com.github.macchinetta.blank^
  -DarchetypeArtifactId=macchinetta-web-blank-xmlconfig-thymeleaf-mybatis3-archetype^
- -DarchetypeVersion=1.10.0.RELEASE
+ -DarchetypeVersion=1.11.0.RELEASE
 ```
 
 ##### for Bash
@@ -191,4 +191,4 @@ mvn archetype:generate^
 mvn archetype:generate\
  -DarchetypeGroupId=com.github.macchinetta.blank\
  -DarchetypeArtifactId=macchinetta-web-blank-xmlconfig-thymeleaf-mybatis3-archetype\
- -DarchetypeVersion=1.10.0.RELEASE
+ -DarchetypeVersion=1.11.0.RELEASE
